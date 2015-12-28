@@ -1,0 +1,9 @@
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\bin\Debug\CustomerMsgApp.Model.dll.config
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\bin\Debug\CustomerMsgApp.Model.dll
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\bin\Debug\CustomerMsgApp.Model.pdb
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\bin\Debug\EntityFramework.dll
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\bin\Debug\EntityFramework.xml
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\obj\Debug\CustomerMsgApp.Model.dll
+E:\Projects\CustomerMsgApp\CustomerMsgApp\CustomerMsgApp.Model\obj\Debug\CustomerMsgApp.Model.pdb

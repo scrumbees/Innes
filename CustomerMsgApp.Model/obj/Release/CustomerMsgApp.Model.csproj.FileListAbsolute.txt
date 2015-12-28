@@ -1,0 +1,10 @@
+E:\CustomerMsgApp\CustomerMsgApp.Model\bin\Release\CustomerMsgApp.Model.dll.config
+E:\CustomerMsgApp\CustomerMsgApp.Model\bin\Release\CustomerMsgApp.Model.dll
+E:\CustomerMsgApp\CustomerMsgApp.Model\bin\Release\CustomerMsgApp.Model.pdb
+E:\CustomerMsgApp\CustomerMsgApp.Model\bin\Release\EntityFramework.dll
+E:\CustomerMsgApp\CustomerMsgApp.Model\bin\Release\EntityFramework.SqlServer.dll
+E:\CustomerMsgApp\CustomerMsgApp.Model\bin\Release\EntityFramework.xml
+E:\CustomerMsgApp\CustomerMsgApp.Model\bin\Release\EntityFramework.SqlServer.xml
+E:\CustomerMsgApp\CustomerMsgApp.Model\obj\Release\CustomerMsgApp.Model.csprojResolveAssemblyReference.cache
+E:\CustomerMsgApp\CustomerMsgApp.Model\obj\Release\CustomerMsgApp.Model.dll
+E:\CustomerMsgApp\CustomerMsgApp.Model\obj\Release\CustomerMsgApp.Model.pdb

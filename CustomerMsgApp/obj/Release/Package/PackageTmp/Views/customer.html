@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Tracking Home Page</title>
+
+    <script src="/Scripts/Extra/jquery-2.1.4.min.js"></script>
+    <link href="/Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/simple-sidebar.css" rel="stylesheet" />
+    <link href="/Content/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Content/datepicker.min.css" />
+    <link rel="stylesheet" href="/Content/bootstrap-timepicker.min.css" />
+    <link href="/Content/dataTables.tableTools.css" rel="stylesheet" />
+    <link href="/Content/dropdowns-enhancement.css" rel="stylesheet" />
+    <link href="/Content/fullcalendar.min.css" rel="stylesheet" />
+    <link href="/Content/scheduler.min.css" rel="stylesheet" />
+    <link href="/Content/Custom.css" rel="stylesheet" />
+
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+    </style>
+    <link href="../Content/jquery.dataTables.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+    <!--<script src="/Scripts/Extra/sidebar_menu.js"></script>-->
+    <script src="/Scripts/Extra/bootstrap.js"></script>
+
+    <!--<script src="/Scripts/Extra/bootstrap-multiselect.js"></script>
+    <script src="/Scripts/Extra/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/Extra/dataTables.bootstrap.min.js"></script>
+    <script src="/Scripts/Extra/dataTables.responsive.min.js"></script>
+    <script src="/Scripts/Extra/bootstrap-datepicker.min.js"></script>
+    <script src="/Scripts/Extra/bootstrap-timepicker.min.js"></script>
+    <script src="/Scripts/Extra/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="/Scripts/Extra/lodash.min.js"></script>
+    <script src="/Scripts/Extra/dataTables.tableTools.js"></script>
+    <script src="/Scripts/Extra/dropdowns-enhancement.js"></script>
+
+    <script src="/Scripts/Extra/moment.min.js"></script>
+    <script src="/Scripts/Extra/fullcalendar.min.js"></script>
+    <script src="/Scripts/Extra/scheduler.min.js"></script>-->
+    <!--<script src="../Scripts/Extra/bootstrap-datepicker.min.js"></script>
+    <script src="../Scripts/Extra/bootstrap-timepicker.min.js"></script>-->
+    <script src=" http://momentjs.com/downloads/moment.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="../Scripts/Extra/jquery.dataTables.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/AngularUI/ui-router.min.js"></script>
+    <script src="/Scripts/angular-sanitize.min.js"></script>
+    <script src="/Scripts/app.js"></script>
+    <script src="/Scripts/apiurl.js"></script>
+    <script src="/Scripts/angular-cookies.min.js"></script>
+
+    <!-- Customer Controller Information-->
+    <script src="../Scripts/Pages/Customer/CustomerController.js"></script>
+    <script src="../Scripts/Pages/Customer/CustomerService.js"></script>
+
+    <script src="/Scripts/Pages/Common.js"></script>
+</head>
+<body>
+    <div id="wrapper" ng-app="CustomerMsgApp" ng-controller="customercontroller">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="customer.html">Innes</a>
+            </div>
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <button type="button" class="btn btn-default btn-sm" style="margin:10px 20px 0px 0px;">
+                        <a href="login.html"><span class="glyphicon glyphicon-off"></span> Log out</a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="page-header">
+        </div>
+
+        <div class="bs-example">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Search</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label>TourOpCode</label>
+                            <input type="text" placeholder="TourOpCode" class="form-control" ng-model="Customer.TourOpCode" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>DirectOrAgent</label>
+                            <select name="ddldirectorage" class="form-control" ng-model="Customer.DirectOrAgent" ng-init="Customer.DirectOrAgent='DIRECT'">
+                                <option value="DIRECT">Direct</option>
+                                <option value="AGENT">Agent</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Start Date</label>
+                            <!--<input type="date" placeholder="Date" class="form-control" ng-model="Customer.StartDate" />-->
+                            <div class='input-group date datePicke1'>
+                                <input type='text' class="form-control" id="StartDate" name="StartDate" ng-model="Customer.StartDate" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Departure Point</label>
+                            <input type="text" placeholder="Departure point" class="form-control" ng-model="Customer.DeparturePoint" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Arrival Point</label>
+                            <input type="text" placeholder="ArrivalPoint" id="" class="form-control" ng-model="Customer.ArrivalPoint" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Travel Date</label>
+                            <div class='input-group date datePicke1'>
+                                <input type='text' class="form-control" id="TravelDate" name="TravelDate" ng-model="Customer.TravelDate" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label>Travel Depature Time</label>
+                            <input id="TravelDepatureTime" class="form-control placeholder-no-fix form-control-inline  date-picker" name="TravelDepatureTime" ng-model="Customer.TravelDepatureTime" type="text" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>TravelArrivalTime</label>
+                            <input type="text" placeholder="" data-format="hh:mm:ss" id="TravelArrivalTime" class="form-control" ng-model="Customer.TravelArrivalTime" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>TravelDirection</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.TravelDirection" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>TransportCarrier</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.TransportCarrier" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Transport Number</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.TransportNumber" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Transport Type</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.TransportType" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <label>Transport Chain</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.TransportChain" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Country Name</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.CountryName" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Resort Name</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.ResortName" />
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Accommodation Name</label>
+                            <input type="text" placeholder="" id="" class="form-control" ng-model="Customer.AccommodationName" />
+                        </div>
+                        <div class="col-sm-2">
+                            <button class="btn btn-primary" style="margin-top: 20px;" ng-click="Search(Customer)">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Message</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea placeholder="Message" id="txtMessage" class="form-control" maxlength="160" ng-model="Customer.Message"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button style="float:right;margin-top:5px;" id="btnSend" class="btn btn-primary" ng-click="Send()">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Search Result</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="CustomorListTBL" style="max-width:100%!important;overflow-y:scroll">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:20px !important;">BookingRef</th>
+                                            <th>TourOpCode</th>
+                                            <th>PassengerId</th>
+                                            <th>Title</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
+                                            <th>MobileNo</th>
+                                            <th>Email</th>
+                                            <th>DirectOrAgent</th>
+                                            <th>StartDate</th>
+                                            <th>DeparturePoint</th>
+                                            <th>ArrivalPoint</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="bs-example">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <button type="button" class="close" data-dismiss="modal" ng-click="close()">&times;</button>
+                                    <h3 class="panel-title">Send Message</h3>
+                                </div>
+                                <div class="panel-body" style="margin:10px 10px 10px 10px;">
+                                    <div class="row" id="divMessageSuccess" ng-show="divMessageSuccess">
+                                        <div class="alert alert-success" style="padding:10px 10px 10px 10px;">
+                                            Message sent successfully.
+                                        </div>
+                                    </div>
+                                    <div id="divSendMessage" ng-show="divSendMessage">
+                                        <div class="row">
+                                            <b><div id="BindCount"></div></b>
+                                        </div>
+                                        <div class="clearfix">
+                                            <br />
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label>Please Enter Password:</label>
+                                                <input id="txtPasswordSend" class="form-control" type="password" placeholder="Password" style="width:200px;" />
+                                            </div>
+                                        </div>
+                                        <div class="row" style="float:left; text-align:left;">
+                                            <button class="btn btn-primary" style="margin-top: 20px;" ng-click="SendMessage(Customer)">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        $('.datePicke1').datetimepicker({
+            format: 'DD/MM/YYYY'
+        });
+
+        $('#TravelDepatureTime').datetimepicker({
+            format: 'LT',
+        }).on("dp.change", function (e) {
+            var date = e.date;//e.date is a moment object
+            var target = $(e.target).attr('name');
+            console.log(date.format("HH:mm:ss"))//get time by using format
+        });
+
+        $('#TravelArrivalTime').datetimepicker({
+            format: 'LT',
+        }).on("dp.change", function (e) {
+            var date = e.date;//e.date is a moment object
+            var target = $(e.target).attr('name');
+            console.log(date.format("HH:mm:ss"))//get time by using format
+        });
+    });
+</script>

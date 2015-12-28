@@ -1,0 +1,17 @@
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\CustomerMsgApp.Service.dll.config
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\CustomerMsgApp.Service.dll
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\CustomerMsgApp.Service.pdb
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\CustomerMsgApp.Model.dll
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\EntityFramework.dll
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\EntityFramework.SqlServer.dll
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\RestSharp.dll
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\Twilio.Api.dll
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\CustomerMsgApp.Model.pdb
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\EntityFramework.xml
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\EntityFramework.SqlServer.xml
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\RestSharp.xml
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\Twilio.Api.pdb
+E:\CustomerMsgApp\CustomerMsgApp.Service\bin\Release\Twilio.Api.xml
+E:\CustomerMsgApp\CustomerMsgApp.Service\obj\Release\CustomerMsgApp.Service.csprojResolveAssemblyReference.cache
+E:\CustomerMsgApp\CustomerMsgApp.Service\obj\Release\CustomerMsgApp.Service.dll
+E:\CustomerMsgApp\CustomerMsgApp.Service\obj\Release\CustomerMsgApp.Service.pdb

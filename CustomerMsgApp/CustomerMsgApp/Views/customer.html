@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Tracking Home Page</title>
+
+    <script src="/Scripts/Extra/jquery-2.1.4.min.js"></script>
+    <link href="/Content/ui-bootstrap-csp.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/simple-sidebar.css" rel="stylesheet" />
+    <link href="/Content/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Content/datepicker.min.css" />
+    <link rel="stylesheet" href="/Content/datepicker3.min.css" />
+    <link rel="stylesheet" href="/Content/bootstrap-timepicker.min.css" />
+    <link rel="stylesheet" href="/Content/bootstrap-timepicker.min.css" />
+    <link href="/Content/dataTables.tableTools.css" rel="stylesheet" />
+    <link href="/Content/dropdowns-enhancement.css" rel="stylesheet" />
+    <link href="/Content/fullcalendar.min.css" rel="stylesheet" />
+    <link href="/Content/scheduler.min.css" rel="stylesheet" />
+    <link href="/Content/Custom.css" rel="stylesheet" />
+
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+    </style>
+
+    <!--<script src="/Scripts/Extra/sidebar_menu.js"></script>-->
+    <script src="/Scripts/Extra/bootstrap.js"></script>
+    <!--<script src="/Scripts/Extra/bootstrap-multiselect.js"></script>
+    <script src="/Scripts/Extra/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/Extra/dataTables.bootstrap.min.js"></script>
+    <script src="/Scripts/Extra/dataTables.responsive.min.js"></script>
+    <script src="/Scripts/Extra/bootstrap-datepicker.min.js"></script>
+    <script src="/Scripts/Extra/bootstrap-timepicker.min.js"></script>
+    <script src="/Scripts/Extra/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="/Scripts/Extra/lodash.min.js"></script>
+    <script src="/Scripts/Extra/dataTables.tableTools.js"></script>
+    <script src="/Scripts/Extra/dropdowns-enhancement.js"></script>
+
+    <script src="/Scripts/Extra/moment.min.js"></script>
+    <script src="/Scripts/Extra/fullcalendar.min.js"></script>
+    <script src="/Scripts/Extra/scheduler.min.js"></script>-->
+
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/AngularUI/ui-router.min.js"></script>
+    <script src="/Scripts/angular-sanitize.min.js"></script>
+    <script src="/Scripts/app.js"></script>
+    <script src="/Scripts/apiurl.js"></script>
+    <script src="/Scripts/angular-cookies.min.js"></script>
+
+    <!-- Customer Controller Information-->
+    <script src="../Scripts/Pages/Customer/CustomerController.js"></script>
+    <script src="../Scripts/Pages/Customer/CustomerService.js"></script>
+
+    <script src="/Scripts/Pages/Common.js"></script>
+</head>
+<body>
+    <div id="wrapper" ng-app="CustomerMsgApp" ng-controller="customercontroller">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="customer.html">Innes</a>
+            </div>
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <button type="button" class="btn btn-default btn-sm" style="margin:10px 20px 0px 0px;">
+                        <a href="login.html"><span class="glyphicon glyphicon-off"></span> Log out</a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="page-header">
+        </div>
+
+        <div class="bs-example">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Search</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" placeholder="Name" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" placeholder="Email" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" placeholder="Mobile" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Message</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea placeholder="Message" class="form-control"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button style="float:right;margin-top:5px;" ng-click="SendMessage()" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Search Result</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="CustomorListTBL">
+                                    <thead>
+                                        <tr>
+                                            <th>BookingRef</th>
+                                            <th>TourOpCode</th>
+                                            <th>PassengerId</th>
+                                            <th>Title</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
+                                            <th>MobileNo</th>
+                                            <th>Email</th>
+                                            <th>DirectOrAgent</th>
+                                            <th>StartDate</th>
+                                            <th>DeparturePoint</th>
+                                            <th>ArrivalPoint</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody ng-repeat="cust in Customers">
+                                        <tr class="">
+                                            <td>{{cust.BookingRef}}</td>
+                                            <td>{{cust.TourOpCode}}</td>
+                                            <td>{{cust.PassengerId}}</td>
+                                            <td>{{cust.Title}}</td>
+                                            <td>{{cust.FirstName}}</td>
+                                            <td>{{cust.LastName}}</td>
+                                            <td>{{cust.MobileNo}}</td>
+                                            <td>{{cust.Email}}</td>
+                                            <td>{{cust.DirectOrAgent}}</td>
+                                            <td>{{cust.StartDate}}</td>
+                                            <td>{{cust.DeparturePoint}}</td>
+                                            <td>{{cust.ArrivalPoint}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="AddEditMsg" style="margin-top: 10px;">
+        </div>
+    </div>
+</body>
+</html>
